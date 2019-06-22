@@ -1,11 +1,84 @@
 {
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.6",
-    "babel-preset-env": "^1.7.0",
-    "css-loader": "^3.0.0",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.33.0",
-    "webpack-dev-server": "^3.7.1"
-  }
+    "name": "starter-project",
+    "devDependencies": {
+        "awesome-typescript-loader": "^5.2.1",
+        "babel-core": "^6.26.3",
+        "babel-loader": "^8.0.6",
+        "babel-preset-env": "^1.7.0",
+        "css-loader": "^3.0.0",
+        "style-loader": "^0.23.1",
+        "webpack": "^4.33.0",
+        "webpack-dev-server": "^3.7.1",
+        "@types/axios": "^0.14.0",
+        "@types/jest": "^23.3.13",
+        "@types/node": "^10.12.19",
+        "@types/react": "^16.7.20",
+        "@types/react-dom": "^16.0.11",
+        "@types/react-jss": "^8.6.3",
+        "@types/react-redux": "^7.0.1",
+        "@types/react-router": "^4.4.3",
+        "@types/react-router-dom": "^4.3.1",
+        "@types/recompose": "^0.30.3",
+        "@types/redux-devtools": "^3.0.45",
+        "@types/urlsafe-base64": "^1.0.28",
+        "html-webpack-plugin": "^3.2.0",
+        "husky": "^1.3.1",
+        "jest": "^24.7.1",
+        "mini-css-extract-plugin": "^0.6.0",
+        "prettier": "1.16.4",
+        "prettier-stylelint": "^0.4.2",
+        "redux-devtools": "^3.4.1",
+        "redux-devtools-extension": "^2.13.7",
+        "source-map-loader": "^0.2.4",
+        "stylelint": "^9.10.1",
+        "stylelint-config-standard": "^18.2.0",
+        "ts-jest": "^24.0.2",
+        "tslint": "^5.12.1",
+        "tslint-config-prettier": "^1.18.0",
+        "tslint-react": "^3.6.0",
+        "url-loader": "^1.1.2",
+        "webpack-cli": "^3.2.1",
+        "webpack-merge": "^4.2.1"
+    },
+    "scripts": {
+        "dev": "webpack-dev-server --hot --config webpack.dev.js",
+        "dev-build": "webpack --config webpack.dev.js",
+        "qa-build": "webpack --config webpack.qa.js",
+        "prod-build": "webpack --config webpack.prod.js",
+        "test": "jest",
+        "test-coverage": "jest --coverage",
+        "test-silent": "jest --silent",
+        "lint": "tslint -c tslint.json './src/**/*.ts' --fix && stylelint \"./src/**/*.css\" --fix"
+    },
+    "dependencies": {
+        "axios": "^0.18.0",
+        "connected-react-router": "^6.4.0",
+        "date-fns": "^1.30.1",
+        "history": "^4.7.2",
+        "optimize-css-assets-webpack-plugin": "^5.0.1",
+        "react": "^16.7.0",
+        "react-dom": "^16.2.0",
+        "react-jss": "^8.6.1",
+        "react-redux": "^6.0.0",
+        "react-router": "^5.0.0",
+        "react-router-dom": "^5.0.0",
+        "recompose": "^0.30.0",
+        "redux": "^4.0.1",
+        "redux-saga": "^1.0.2",
+        "terser-webpack-plugin": "^1.2.3",
+        "typesafe-actions": "^4.0.0",
+        "typescript": "^3.2.4",
+        "urlsafe-base64": "^1.0.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "yarn run lint && pretty-quick --staged && yarn run test-silent"
+        }
+    },
+    "prettier": {
+        "printWidth": 120,
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "singleQuote": true
+    }
 }
